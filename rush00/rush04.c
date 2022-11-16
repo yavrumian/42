@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 19:58:00 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/15 23:02:53 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/12 17:09:12 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/13 20:40:08 by arahovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-void	ft_swap(int *a, int *b)
+void	ft_line(int len, char f, char m, char l)
 {
-	*a += *b;
-	*b = *a - *b;
-	*a -= *b;
-}
-
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	curr;
-	int	least;
 	int	i;
 
-	curr = 0;
-	while (curr <= size - 1)
+	ft_putchar(f);
+	i = 0;
+	while (len > 2 && i < len - 2)
 	{
-		least = curr;
-		i = curr;
-		while (i <= size - 1)
-		{
-			if (*(tab + i) < *(tab + least))
-				least = i;
-			i++;
-		}
-		if (curr != least)
-			ft_swap(tab + curr, tab + least);
-		curr++;
+		ft_putchar(m);
+		i++;
+	}
+	if (len > 1)
+	{
+		ft_putchar(l);
+	}
+	ft_putchar('\n');
+}
+
+void	rush(int x, int y)
+{
+	int	i;
+
+	ft_line(x, 65, 66, 67);
+	i = 0;
+	while (i < y - 2)
+	{
+		ft_line(x, 66, 32, 66);
+		i++;
+	}
+	if (y > 1)
+	{
+		ft_line(x, 67, 66, 65);
 	}
 }
