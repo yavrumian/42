@@ -1,40 +1,66 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/18 16:26:55 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/18 16:58:15 by vyavrumy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-char *ft_strstr(char *str, char *to_find)
+int	ft_strlen(char *str)
 {
-		int	i;
-		int	fi;
-		char	*res;
+	int	i;
 
-		res = NULL;
-		i = -1;
-		fi = 0;
-		while (str[++i])
-		{
-			if (str[i] == to_find[fi])
-			{
-				if (res == NULL)
-					res = &str[i];
-				++fi;
-			}
-			else if (to_find[fi] == 0)
-			{
-				return res;
-			}
-			else
-			{
-				res = NULL;
-				fi = 0;
-			}
-		}
-			return res;
+	i = 0;
+	while (*(str + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+void	norm_is_dumb(char **a, int *b)
+{
+	***a = NULL;
+	*b = 0; 
+}
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	int		i;
+	int		fi;
+	char	*res;
+
+	res = NULL;
+	i = -1;
+	fi = 0;
+	if (!to_find[0])
+		return (&str[0]);
+	while (str[++i])
+	{
+		if (str[i] == to_find[fi] && fi++ && res == NULL) 
+			res = (&str[i]);
+		else if (to_find[fi] == 0)
+			return (res);
+		else
+			norm_is_dumb(&res, &fi);
+	}
+	if (ft_strlen(to_find) > fi)
+		return (NULL);
+	else
+		return (res);
 }
 
 #include <stdio.h>
 #include <string.h>
 int main(){
-	char str[] = "hello world";
-	char find[] = "lda";
+	char str[] = "llo";
+	char find[] = "";
 //	char *null = NULL;
 
 	char *res = ft_strstr(str, find);
