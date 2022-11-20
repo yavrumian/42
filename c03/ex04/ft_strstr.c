@@ -6,7 +6,7 @@
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:26:55 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/18 16:58:15 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:56:23 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	norm_is_dumb(char **a, int *b)
+void	norm_is_dumb(char **a, int *b, int *i)
 {
-	***a = NULL;
-	*b = 0; 
+*a = NULL;
+	*b = 0;
+	*i -= 1;
 }
 
 char	*ft_strstr(char *str, char *to_find)
@@ -43,19 +44,19 @@ char	*ft_strstr(char *str, char *to_find)
 		return (&str[0]);
 	while (str[++i])
 	{
-		if (str[i] == to_find[fi] && fi++ && res == NULL) 
+		if (str[i] == to_find[fi] && fi++ && res == NULL)
 			res = (&str[i]);
 		else if (to_find[fi] == 0)
 			return (res);
 		else
-			norm_is_dumb(&res, &fi);
+			norm_is_dumb(&res, &fi, &i);
 	}
 	if (ft_strlen(to_find) > fi)
 		return (NULL);
 	else
 		return (res);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int main(){
@@ -82,4 +83,4 @@ int main(){
 		printf("NULL\n");
 	}
 	return 0;
-}
+}*/
