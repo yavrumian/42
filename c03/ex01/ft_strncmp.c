@@ -6,18 +6,16 @@
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 10:40:33 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/18 10:40:36 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/20 15:56:59 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	int	nn;
+	unsigned int	i;
 
-	nn = n;
-	i = -1;
-	while ((s1[++i] || s2[i]) && i < nn - 1)
+	i = 0;
+	while ((s1[i++] || s2[i]) && i < n - 1)
 	{
 		if (s1[i] == s2[i])
 			continue ;
@@ -29,12 +27,12 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 #include <stdio.h>
 #include <string.h>
 int main(){
-	char s1[] = "hello world, nice day";
-	char s2[] = "hello \0";
+	char s1[] = "ssss";
+	char s2[] = "sss";
 	
-	int n = 200;
+	int n = 4;
 	printf("my: %i\n", ft_strncmp(s1, s2, n));
 
 	printf("orig: %i\n", strncmp(s1, s2, n));
 	return 0;
-}*/
+	*/
