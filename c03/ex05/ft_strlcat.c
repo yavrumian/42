@@ -6,7 +6,7 @@
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 12:43:36 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/20 15:56:06 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/21 20:28:28 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ int	ft_strlen(char *str)
 
 char	*ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	di;
-	int	i;
-	int	nn;
-	int	dest_len;
+	int				di;
+	unsigned int	i;
+	int				dest_len;
 
-	nn = size;
 	dest_len = ft_strlen(dest);
-	i = -1;
+	i = 0;
 	di = ft_strlen(dest);
-	while (++i < nn - dest_len - 1)
+	while (i < size - dest_len - 1)
 	{
 		dest[di] = src[i];
+		++i;
 		++di;
 	}
 	dest[di] = 0;
