@@ -20,27 +20,31 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 {
-	int				di;
+	unsigned int	dst_len;
+	unsigned int	src_len;
 	unsigned int	i;
-	int				dest_len;
 
-	dest_len = ft_strlen(dest);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
 	i = 0;
-	di = ft_strlen(dest);
-	while (src[i] && i < size - dest_len - 1)
+	if (size < dst_len + 1)
+		return (size + src_len);
+	if (size > dst_len + 1)
 	{
-		dest[di] = src[i];
-		++i;
-		++di;
+		while (src[i] != '\0' && dst_len + 1 + i < size)
+		{
+			dst[dst_len + i] = src[i];
+			i++;
+		}
 	}
-	dest[di] = 0;
-	return (dest);
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }
 /*
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 int main(){
 	char s1[] = "my source";
 	char s2[13] = "this is";
