@@ -6,7 +6,7 @@
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 12:43:36 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/21 20:16:04 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/22 20:23:49 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	i = 0;
 	di = ft_strlen(dest);
-	while (i < nb)
+	while (src[i] && i < nb)
 	{
 		dest[di] = src[i];
 		++di;
@@ -40,12 +40,12 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 #include <string.h>
 #include <stdio.h>
 int main(){
-	char s1[] = "";
-	char s2[17] = "i";
-	char o1[] = "";
-	char o2[17] = "i";
-	ft_strncat(s2, s1, 10);
-	strncat(o2, o1, 10);
+	char s1[] = "1234";
+	char s2[10] = "i";
+	char o1[] = "1234";
+	char o2[10] = "i";
+	ft_strncat(s2, s1, 90);
+//	strncat(o2, o1, 90);
 
 	printf("%s\n", s2);
 	printf("%s\n", o2);

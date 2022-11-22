@@ -6,7 +6,7 @@
 /*   By: vyavrumy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:14:46 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/21 12:53:57 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/22 21:46:43 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,9 +21,9 @@ void	ft_putnbr(int nb)
 		last_digit = -(nb % 10) + '0';
 	else
 		last_digit = (nb % 10) + '0';
-	nb /= 10;
 	if (nb < 0 && nb >= -11)
 		write(1, "-", 1);
+	nb /= 10;
 	ft_putnbr(nb);
 	write(1, &last_digit, 1);
 }
