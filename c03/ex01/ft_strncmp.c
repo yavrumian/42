@@ -6,7 +6,7 @@
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 10:40:33 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/22 19:55:11 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/24 19:52:43 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 			return (s1[i] - s2[i]);
 		++i;
 	}
+	if (i != n)
+		return (s1[i] - s2[i]);
 	return (0);
 }
 /*

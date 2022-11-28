@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   search.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
+/*   By: vyavrumy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 10:26:20 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/23 21:10:16 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/27 18:36:52 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/27 18:39:08 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -23,15 +25,17 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (s1[i] - s2[i]);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main(){
-	char s1[] = "hello world, nice day";
-	char s2[] = "hello";
-	
-	printf("my: %i\n", ft_strcmp(s1, s2));
 
-	printf("orig: %i\n", strcmp(s1, s2));
-	return 0;
-}*/
+char *search(char ***tab, char *find)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		if(!ft_strcmp(tab[i][0], find))
+			return (tab[i][1]);
+		++i;
+	}
+	return (NULL);
+}
