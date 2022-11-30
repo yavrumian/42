@@ -6,7 +6,7 @@
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:30:24 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/21 17:45:00 by vyavrumy         ###   ########.fr       */
+/*   Updated: 2022/11/28 22:34:56 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_fibonacci(int index)
 		return (0);
 	if (index == 1)
 		return (1);
-	return (ft_fibonacci(--index) + ft_fibonacci(--index));
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 /*
 #include <stdio.h>
