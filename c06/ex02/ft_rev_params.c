@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 10:40:33 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/24 19:52:43 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/23 13:33:23 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/23 13:41:27 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	i;
+#include <unistd.h>
 
-	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+int	main(int argc, char **argv)
+{
+	int	j;
+
+	while (--argc)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		++i;
+		j = -1;
+		while (argv[argc][++j])
+			write(1, &argv[argc][j], 1);
+		write(1, "\n", 1);
 	}
-	if (i != n)
-		return (s1[i] - s2[i]);
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main(){
-	char s1[] = "ba";
-	char s2[] = "a";
-	
-	int n = 3;
-	printf("my: %i\n", ft_strncmp(s1, s2, n));
-
-	printf("orig: %i\n", strncmp(s1, s2, n));
-	return 0;
-}*/
