@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:13:44 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/12/07 16:13:47 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/17 16:44:59 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/17 16:45:14 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+char	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+			dest[i] = src[i];
+	}
+	return (dest);
 }

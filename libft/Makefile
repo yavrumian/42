@@ -1,13 +1,13 @@
 NAME = lib.out
 SRCS = $(wildcard *.c)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -c -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CC) $(OBJS) -o $(NAME)
+		$(CC) $(OBJS) -g -fsanitize=address -o $(NAME)
 
 clean:
 		rm -rf *.o
