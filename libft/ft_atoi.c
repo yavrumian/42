@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:44:59 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/17 16:45:14 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/21 13:05:59 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/21 15:32:00 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int	sign;
+	int	i;
+	int	res;
 
-	i = 0;
-	while (i < n)
+	res = 0;
+	i = -1;
+	sign = 1;
+	while (str[++i] == ' ' || str[i] == '\v' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\t')
+		;
+	if (str[i] == '-' || str[i] == '+')
 	{
-			dest[i] = src[i];
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	return (dest);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+			res = res * 10 + (str[i] - '0');
+			++i;
+	}
+	return (sign * res);
 }

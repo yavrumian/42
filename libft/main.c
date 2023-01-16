@@ -38,5 +38,7 @@ int	main(int argc, char **argv)
 	//########## >> FT_BZERO << ##########
 	// char s[] = {'a', 'b', 'c'};
 	// printf("value: %s\noutput: %s\n", argv[1], (char*)ft_bzero(s, 7));
+	//########## >> FT_ATOI << ##########
+	printf("value: %s\noutput: %i\n", argv[1], ft_atoi(argv[1]));
 	return 0;
 }
