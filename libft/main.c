@@ -39,6 +39,12 @@ int	main(int argc, char **argv)
 	// char s[] = {'a', 'b', 'c'};
 	// printf("value: %s\noutput: %s\n", argv[1], (char*)ft_bzero(s, 7));
 	//########## >> FT_ATOI << ##########
-	printf("value: %s\noutput: %i\n", argv[1], ft_atoi(argv[1]));
+	// printf("value: %s\noutput: %i\n", argv[1], ft_atoi(argv[1]));
+	//########## >> FT_STRNSTR << ##########
+	// printf("value: %s\noutput: %s\n", argv[1], ft_strnstr("my test text.", argv[1], 2));
+	//########## >> FT_MEMCMP << ##########
+	unsigned int test1[] = {2, 4, 3};
+	unsigned int test2[] = {2, 1, 3};
+	printf("value: %s\noutput: %i\n", argv[1], ft_memcmp(test1, test2, 3));
 	return 0;
 }
