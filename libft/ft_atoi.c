@@ -10,7 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+<<<<<<< Updated upstream:libft/ft_atoi.c
 int	ft_atoi(const char *str)
+=======
+#include "libft.h"
+
+char	*ft_memcpy(void *dest, const void *src, size_t n)
+>>>>>>> Stashed changes:libft/ft_memcpy.c
 {
 	int	sign;
 	int	i;
@@ -24,9 +30,14 @@ int	ft_atoi(const char *str)
 		;
 	if (str[i] == '-' || str[i] == '+')
 	{
+<<<<<<< Updated upstream:libft/ft_atoi.c
 		if (str[i] == '-')
 			sign *= -1;
 		i++;
+=======
+			((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
+			++i;
+>>>>>>> Stashed changes:libft/ft_memcpy.c
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{

@@ -11,14 +11,25 @@
 /* ************************************************************************** */
 #include <stdio.h>
 
+<<<<<<< Updated upstream:libft/ft_strnstr.c
 int	cmp(char *a, char *b)
+=======
+#include "libft.h"
+
+char	*ft_memcpy(void *dest, const void *src, size_t n)
+>>>>>>> Stashed changes:libft/ft_memcpy.c
 {
 	while (*a && *b)
 	{
+<<<<<<< Updated upstream:libft/ft_strnstr.c
 		if (*a != *b)
 			return (0);
 		a++;
 		b++;
+=======
+			((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
+			++i;
+>>>>>>> Stashed changes:libft/ft_memcpy.c
 	}
 	return (*b == '\0');
 }
