@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 13:05:59 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/11/21 15:32:00 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/12/07 16:13:38 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/12/07 16:13:39 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	sign;
-	int	i;
-	int	res;
+#include "libft.h"
 
-	res = 0;
-	i = -1;
-	sign = 1;
-	while (str[++i] == ' ' || str[i] == '\v' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\t')
-		;
-	if (str[i] == '-' || str[i] == '+')
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	char		*d;
+	const char	*s;
+	size_t		i;
+
+	d = dest;
+	s = src;
+	i = 0;
+	if (d == s)
+		return (dest);
+	if (d < s)
+		while (i < n)
+			{
+				d[i] = s[i];
+				++i;
+			}
+	else
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			d[i - 1] = s[i - 1];
+			--i;
+		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-			res = res * 10 + (str[i] - '0');
-			++i;
-	}
-	return (sign * res);
+	return (dest);
 }

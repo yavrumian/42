@@ -47,9 +47,18 @@ int	main(int argc, char **argv)
 	// char s[] = {'a', 'b', 'c'};
 	// printf("value: %s\noutput: %s\n", argv[1], (char*)ft_memcpy(d, s, 7));
 	//########## >> FT_MEMCMP << ##########
-	unsigned int test1[] = {2, 4, 3};
-	unsigned int test2[] = {2, 1, 3};
-	printf("value: %s\noutput: %i\n", argv[1], ft_memcmp(test1, test2, 3));
+	// unsigned int test1[] = {2, 1, 2};
+	// unsigned int test2[] = {2, 1, 3};
+	// printf("real value: %s\nreal output: %i\n", argv[1], memcmp(test1, test2, 3 * sizeof(int)));
+	// printf("value: %s\noutput: %i\n", argv[1], ft_memcmp(test1, test2, 3 * sizeof(int)));
+	//########## >> FT_MEMMOVE << ##########
+	// unsigned char test1[] = "foo bar text";
+	// unsigned char test2[] = "foo bar text";
+	// (char*)memmove(&test1[2], &test1[2], 2);
+	// (char*)ft_memmove(&test2[2], &test2[2], 2);
+	// printf("real value: %s\nreal output: %s\n", argv[1], test1);
+	// printf("value: %s\noutput: %s\n", argv[1], test2);
+
 
 	return 0;
 }
