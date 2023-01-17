@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 	// printf("value: %s\noutput: %s\n", argv[1], (char*)ft_bzero(s, 7));
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	//########## >> FT_ATOI << ##########
 	// printf("value: %s\noutput: %i\n", argv[1], ft_atoi(argv[1]));
 	//########## >> FT_STRNSTR << ##########
@@ -51,11 +52,16 @@ int	main(int argc, char **argv)
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	//########## >> FT_MEMCPY << ##########
 	// char d[] = {'a', 'f', 'c', 's', '\0'};
 	// char s[] = {'a', 'b', 'c'};
 	// printf("value: %s\noutput: %s\n", argv[1], (char*)ft_memcpy(d, s, 7));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
