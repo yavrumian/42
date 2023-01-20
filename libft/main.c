@@ -58,7 +58,36 @@ int	main(int argc, char **argv)
 	// (char*)ft_memmove(&test2[2], &test2[2], 2);
 	// printf("real value: %s\nreal output: %s\n", argv[1], test1);
 	// printf("value: %s\noutput: %s\n", argv[1], test2);
-
-
+	//########## >> FT_STRLCPY << ##########
+	// char dst1[] = "";
+	// char dst2[] = "";
+	// int n = 0;
+	// printf("value: %s\noriginal output: %zu\n", argv[1], strlcpy(dst1, argv[1], n));
+	// printf("value: %s\noutput: %zu\n", argv[1], ft_strlcpy(dst2, argv[1], n));
+	//########## >> FT_STRLCAT << ##########
+	// char dst1[10] = "1234";
+	// char dst2[10] = "1234";
+	// int n = 10;
+	// printf("value: %s\noriginal output: %zu\ndest: %s\n", argv[1], strlcat(dst1, argv[1], n), dst1);
+	// printf("============\n");
+	// printf("value: %s\noutput: %zu\ndest: %s\n", argv[1], ft_strlcat(dst2, argv[1], n), dst2);
+	//########## >> FT_TOUPPER << ##########
+	// printf("value: %s\noriginal output: %c\n", argv[1], (char)toupper(*argv[1]));
+	// printf("============\n");
+	// printf("value: %s\noutput: %c\n", argv[1], (char)ft_toupper(*argv[1]));
+	//########## >> FT_TOLOWER << ##########
+	// printf("value: %s\noriginal output: %c\n", argv[1], (char)tolower(*argv[1]));
+	// printf("============\n");
+	// printf("value: %s\noutput: %c\n", argv[1], (char)ft_tolower(*argv[1]));
+	//########## >> FT_STRCHR << ##########
+	// char *s = "lorem ipsum dolor sit amet";
+	// printf("value: %s\noriginal output: %s\n", argv[1], strchr(s, *argv[1]));
+	// printf("============\n");
+	// printf("value: %s\noutput: %s\n", argv[1], ft_strchr(s, *argv[1]));
+	//########## >> FT_STRRCHR << ##########
+	char *s = "qlorem ipsum dolor sit amet";
+	printf("value: %s\noriginal output: %s\n", argv[1], strrchr(s, *argv[1]));
+	printf("============\n");
+	printf("value: %s\noutput: %s\n", argv[1], ft_strrchr(s, *argv[1]));
 	return 0;
 }

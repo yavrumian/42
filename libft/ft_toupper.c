@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:14:19 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/12/07 16:14:22 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/12/07 16:13:38 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/12/07 16:13:39 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = -1;
-	while (s[++i])
-		;
-	return (i);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

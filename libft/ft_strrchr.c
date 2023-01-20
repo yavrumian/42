@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:14:19 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/12/07 16:14:22 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/12/07 16:13:38 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/12/07 16:13:39 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char *ft_strrchr(const char *s, int c)
 {
-	int	i;
 
-	i = -1;
-	while (s[++i])
-		;
-	return (i);
+	size_t len;
+	size_t i;
+	len = ft_strlen(s);
+	i = 0;
+
+	while(i < len)
+	{
+		// printf("%c\n", s[len-i-1]);
+		if(s[len-i-1] == c)
+			return ((char*)(s+len-i-1));
+		++i;		
+	}
+	if(c == 0)
+		return ((char*)(s+len));
+	return (NULL);
 }
