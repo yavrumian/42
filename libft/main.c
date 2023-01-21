@@ -96,10 +96,20 @@ int	main(int argc, char **argv)
 	// printf("============\n");
 	// printf("value: %s\noutput: %i\n", argv[1], ft_strncmp(s, argv[1], n));
 	// ########## >> FT_MEMCHR << ##########
-	char *s = "q lorem ipsum dolor sit amt";
-	int n = 15;
-	printf("value: %s\noriginal output: %s\n", argv[1], (char *)memchr(s, *argv[1], n));
+	// char *s = "q lorem ipsum dolor sit amt";
+	// int n = 15;
+	// printf("value: %s\noriginal output: %s\n", argv[1], (char *)memchr(s, *argv[1], n));
+	// printf("============\n");
+	// printf("value: %s\noutput: %s\n", argv[1], (char *)ft_memchr(s, *argv[1], n));
+	// ########## >> FT_CALLOC << ##########
+	// int n = 1;
+	// int b = 0;
+	// printf("value: %s\noriginal output: %p\n", argv[1], calloc(n, b));
+	// printf("============\n");
+	// printf("value: %s\noutput: %p\n", argv[1], ft_calloc(n, b));
+	// ########## >> FT_STRDUP << ##########
+	printf("value: %s\noriginal output: %s\n", argv[1], strdup(argv[1]));
 	printf("============\n");
-	printf("value: %s\noutput: %s\n", argv[1], (char *)ft_memchr(s, *argv[1], n));
+	printf("value: %s\noutput: %s\n", argv[1], ft_strdup(argv[1]));
 	return 0;
 }
