@@ -85,9 +85,21 @@ int	main(int argc, char **argv)
 	// printf("============\n");
 	// printf("value: %s\noutput: %s\n", argv[1], ft_strchr(s, *argv[1]));
 	//########## >> FT_STRRCHR << ##########
-	char *s = "qlorem ipsum dolor sit amet";
-	printf("value: %s\noriginal output: %s\n", argv[1], strrchr(s, *argv[1]));
+	// char *s = "qlorem ipsum dolor sit amet";
+	// printf("value: %s\noriginal output: %s\n", argv[1], strrchr(s, *argv[1]));
+	// printf("============\n");
+	// printf("value: %s\noutput: %s\n", argv[1], ft_strrchr(s, *argv[1]));
+	// ########## >> FT_STRNCMP << ##########
+	// char *s = "test";
+	// int n = 8;
+	// printf("value: %s\noriginal output: %i\n", argv[1], strncmp(s, argv[1], n));
+	// printf("============\n");
+	// printf("value: %s\noutput: %i\n", argv[1], ft_strncmp(s, argv[1], n));
+	// ########## >> FT_MEMCHR << ##########
+	char *s = "q lorem ipsum dolor sit amt";
+	int n = 15;
+	printf("value: %s\noriginal output: %s\n", argv[1], (char *)memchr(s, *argv[1], n));
 	printf("============\n");
-	printf("value: %s\noutput: %s\n", argv[1], ft_strrchr(s, *argv[1]));
+	printf("value: %s\noutput: %s\n", argv[1], (char *)ft_memchr(s, *argv[1], n));
 	return 0;
 }
