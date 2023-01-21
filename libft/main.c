@@ -108,8 +108,16 @@ int	main(int argc, char **argv)
 	// printf("============\n");
 	// printf("value: %s\noutput: %p\n", argv[1], ft_calloc(n, b));
 	// ########## >> FT_STRDUP << ##########
-	printf("value: %s\noriginal output: %s\n", argv[1], strdup(argv[1]));
-	printf("============\n");
-	printf("value: %s\noutput: %s\n", argv[1], ft_strdup(argv[1]));
+	// printf("value: %s\noriginal output: %s\n", argv[1], strdup(argv[1]));
+	// printf("============\n");
+	// printf("value: %s\noutput: %s\n", argv[1], ft_strdup(argv[1]));
+	// // ########## >> FT_SUBSTR << ##########
+	// int start = 49;
+	// int len = 10;
+	// printf("value: %s\noutput: %s\n", argv[1], ft_substr(argv[1], start, len));
+	// // ########## >> FT_STRTRIM << ##########
+	char *set = " h a";
+	// ft_strtrim(argv[1], set);
+	printf("value: %s\noutput:%s!\n", argv[1], ft_strtrim(argv[1], set));
 	return 0;
 }
