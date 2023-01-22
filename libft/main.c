@@ -115,9 +115,15 @@ int	main(int argc, char **argv)
 	// int start = 49;
 	// int len = 10;
 	// printf("value: %s\noutput: %s\n", argv[1], ft_substr(argv[1], start, len));
-	// // ########## >> FT_STRTRIM << ##########
-	char *set = " h a";
+	// // // ########## >> FT_STRTRIM << ##########
+	// char set = ' ';
 	// ft_strtrim(argv[1], set);
-	printf("value: %s\noutput:%s!\n", argv[1], ft_strtrim(argv[1], set));
+	// printf("value: %s\noutput:\n!%s!\n", argv[1], ft_strtrim(argv[1], &set));
+	// // // ########## >> FT_SPLIT << ##########
+	// char *set = "lorem ipsum dolor sit amet";
+	// char *s = "     h e     y ";
+	// (void)(argv);
+	ft_split(argv[1], ' ');
+	// printf("value: %s\n`output:%s!\n", argv[1], ft_strtrim(argv[1], set));
 	return 0;
 }

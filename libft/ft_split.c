@@ -12,22 +12,33 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	**ft_split(char const *s, char c)
 {
-	size_t	len;
-	size_t	start;
-	size_t	end;
+	size_t	arrlen;
+	char	*trimmed;
+	size_t	i;
+	char	del[2];
 
-	len = ft_strlen(s1);
-	start = 0;
-	while(ft_strchr(set, s1[start]))
+	del[0] = c;
+	del[1] = '\0';
+	i = 0;
+	trimmed = ft_strtrim(s, del);
+	arrlen = 1;
+	while (trimmed[i])
 	{
-		if(start == len - 1)
-			return ft_strdup("");
-		++start;
+		if (trimmed[i] == c)
+		{
+			++arrlen;
+			while (trimmed[i] == c)
+			{
+				++i;
+			}
+				// printf(">>\n");
+		}
+		else
+			++i;
 	}
-	end = len - 1;
-	while(ft_strchr(set, s1[end]))
-		--end;
-	return (ft_substr(s1, start, end-start+1));
+	printf(">>%zu \n", arrlen);
+	return NULL;
+
 }
