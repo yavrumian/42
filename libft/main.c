@@ -12,6 +12,27 @@
 
 #include "libft.h"
 
+static	size_t	arrlen(char *s, char c)
+{
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	len = 1;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			++len;
+			while (s[i] == c)
+				++i;
+		}
+		else
+			++i;
+	}
+	return (len);
+}
+
 int	main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -123,7 +144,12 @@ int	main(int argc, char **argv)
 	// char *set = "lorem ipsum dolor sit amet";
 	// char *s = "     h e     y ";
 	// (void)(argv);
-	ft_split(argv[1], ' ');
+	// ft_split(argv[1], ' ');
+	int i = 0;
+	while (i < (int)arrlen(argv[1], ' '))
+	{
+		printf ("%s\n", ft_split(argv[1], ' ')[i++]);
+	}
 	// printf("value: %s\n`output:%s!\n", argv[1], ft_strtrim(argv[1], set));
 	return 0;
 }

@@ -12,33 +12,67 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static	size_t	arrlen(char *s, char c)
 {
-	size_t	arrlen;
-	char	*trimmed;
 	size_t	i;
-	char	del[2];
+	size_t	len;
 
-	del[0] = c;
-	del[1] = '\0';
 	i = 0;
-	trimmed = ft_strtrim(s, del);
-	arrlen = 1;
-	while (trimmed[i])
+	len = 1;
+	while (s[i])
 	{
-		if (trimmed[i] == c)
+		if (s[i] == c)
 		{
-			++arrlen;
-			while (trimmed[i] == c)
-			{
+			++len;
+			while (s[i] == c)
 				++i;
-			}
-				// printf(">>\n");
 		}
 		else
 			++i;
 	}
-	printf(">>%zu \n", arrlen);
-	return NULL;
+	return (len);
+}
+static	char	*c_trim(char *s, char c)
+{
+	char	del[2];
 
+	del[0] = c;
+	del[1] = '\0';
+	return (ft_strtrim(s, del));
+}
+
+struct s_counters
+{
+	size_t	reslen;
+	size_t	i;
+	size_t	len;
+};
+
+char	**ft_split(char const *s, char c)
+{
+	struct s_counters	counts;
+	char				*trimmed;
+	char				**res;
+	int					count;
+
+	trimmed = c_trim((char *)s, c);
+	counts.reslen = arrlen(trimmed, c);
+	res = ft_calloc(sizeof(char *), counts.reslen);
+	counts.i = 0;
+	count = 0;
+	while (trimmed[counts.i])
+	{
+		if (count == (int)(counts.reslen) - 1)
+			c = '\0';
+		counts.len = ft_strchr(trimmed + counts.i, c) - (trimmed + counts.i);
+		res[count] = ft_calloc(counts.len + 1, sizeof(char));
+		ft_memcpy(res[count], trimmed + counts.i, counts.len);
+		counts.i = counts.len + counts.i;
+		while (trimmed[counts.i] == c)
+			if (!trimmed[counts.i++])
+				break ;
+		++count;
+	}
+	res[count] = NULL;
+	return (res);
 }
