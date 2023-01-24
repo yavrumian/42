@@ -12,16 +12,21 @@
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	size_t	len;
+	char	*res;
 	size_t	i;
 
+	len = ft_strlen(s);
+	res = ft_calloc(sizeof(char), len + 1);
+	if (!res)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return ((void *)(s + i));
+		res[i] = f(i, s[i]);
 		++i;
 	}
-	return (NULL);
+	return (res);
 }

@@ -14,20 +14,20 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *p;
-	size_t i;
+	char	*p;
+	size_t	i;
 
-	if(start >= ft_strlen(s))
-		return ft_strdup("");
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
 	p = malloc((sizeof(char) * len) + 1);
-	if(p == NULL)
+	if (p == NULL)
 		return (p);
 	i = 0;
-	while(i < len && s[i])
+	while (i < len && s[i])
 	{
 		p[i] = s[start + i];
 		++i;
 	}
 	p[i] = 0;
-	return p;
+	return (p);
 }

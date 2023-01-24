@@ -32,6 +32,7 @@ static	size_t	arrlen(char *s, char c)
 	}
 	return (len);
 }
+
 static	char	*c_trim(char *s, char c)
 {
 	char	del[2];
@@ -46,33 +47,35 @@ struct s_counters
 	size_t	reslen;
 	size_t	i;
 	size_t	len;
+	int		count;
+	char	*t;
 };
 
 char	**ft_split(char const *s, char c)
 {
 	struct s_counters	counts;
-	char				*trimmed;
 	char				**res;
-	int					count;
 
-	trimmed = c_trim((char *)s, c);
-	counts.reslen = arrlen(trimmed, c);
+	counts.t = c_trim((char *)s, c);
+	counts.reslen = arrlen(counts.t, c);
 	res = ft_calloc(sizeof(char *), counts.reslen);
+	if (!res)
+		return (NULL);
 	counts.i = 0;
-	count = 0;
-	while (trimmed[counts.i])
+	counts.count = 0;
+	while (counts.t[counts.i])
 	{
-		if (count == (int)(counts.reslen) - 1)
+		if (counts.count == (int)(counts.reslen) - 1)
 			c = '\0';
-		counts.len = ft_strchr(trimmed + counts.i, c) - (trimmed + counts.i);
-		res[count] = ft_calloc(counts.len + 1, sizeof(char));
-		ft_memcpy(res[count], trimmed + counts.i, counts.len);
+		counts.len = ft_strchr(counts.t + counts.i, c) - (counts.t + counts.i);
+		res[counts.count] = ft_calloc(counts.len + 1, sizeof(char));
+		ft_memcpy(res[counts.count], counts.t + counts.i, counts.len);
 		counts.i = counts.len + counts.i;
-		while (trimmed[counts.i] == c)
-			if (!trimmed[counts.i++])
+		while (counts.t[counts.i] == c)
+			if (!counts.t[counts.i++])
 				break ;
-		++count;
+		++counts.count;
 	}
-	res[count] = NULL;
+	res[counts.count] = NULL;
 	return (res);
 }
