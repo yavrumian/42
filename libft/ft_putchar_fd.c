@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
+/*   By: vyavrumy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:14:00 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/12/07 16:14:00 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/08 22:24:38 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/12 00:27:43 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	write (fd, &c, 1);
 }
