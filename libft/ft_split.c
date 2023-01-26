@@ -58,7 +58,7 @@ char	**ft_split(char const *s, char c)
 
 	counts.t = c_trim((char *)s, c);
 	counts.reslen = arrlen(counts.t, c);
-	res = ft_calloc(sizeof(char *), counts.reslen);
+	res = ft_calloc(counts.reslen + 1, sizeof(char *));
 	if (!res)
 		return (NULL);
 	counts.i = 0;
@@ -76,6 +76,7 @@ char	**ft_split(char const *s, char c)
 				break ;
 		++counts.count;
 	}
+	free(counts.t);
 	res[counts.count] = NULL;
 	return (res);
 }

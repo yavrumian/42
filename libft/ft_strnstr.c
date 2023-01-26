@@ -10,29 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include "libft.h"
 
-int	cmp(char *a, char *b)
+int	cmp(char *a, char *b, size_t len)
 {
-	while (*a && *b)
+	while (*a && *b && len)
 	{
 		if (*a != *b)
 			return (0);
-		a++;
-		b++;
+		++a;
+		++b;
+		--len;
+
 	}
 	return (*b == '\0');
 }
 
+// aaabcabcd
 char	*ft_strnstr(char *haystack, char *needle, size_t len)
 {
 	if (*needle == '\0')
 		return (haystack);
-	while (*haystack != '\0' && len--)
+	while (*haystack != '\0' && len)
 	{
-		printf("%zu\n", len);
-		if ((*haystack == *needle) && cmp(haystack, needle))
+		if ((*haystack == *needle) && cmp(haystack, needle, len))
 			return (haystack);
 		haystack++;
+		--len;
 	}
 	return (NULL);
 }
