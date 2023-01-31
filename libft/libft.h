@@ -12,12 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-/* ############### >> REMEMBER TO DELETE << ################### */
 # include <unistd.h>
-# include <stdio.h>
-# include <stddef.h>
-# include <ctype.h>
-# include <string.h>
 # include <limits.h>
 # include <stdlib.h>
 
@@ -34,8 +29,8 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
-size_t	ft_strlcpy(char * dst, const char * src, size_t dstsize);
-size_t	ft_strlcat(char * dst, const char * src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_tolower(int c);

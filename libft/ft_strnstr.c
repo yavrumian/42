@@ -21,7 +21,6 @@ int	cmp(char *a, char *b, size_t len)
 		++a;
 		++b;
 		--len;
-
 	}
 	return (*b == '\0');
 }
