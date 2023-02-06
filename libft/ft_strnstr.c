@@ -9,7 +9,6 @@
 /*   Updated: 2022/11/21 20:25:09 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include "libft.h"
 
 int	cmp(char *a, char *b, size_t len)
@@ -25,7 +24,6 @@ int	cmp(char *a, char *b, size_t len)
 	return (*b == '\0');
 }
 
-// aaabcabcd
 char	*ft_strnstr(char *haystack, char *needle, size_t len)
 {
 	if (*needle == '\0')
