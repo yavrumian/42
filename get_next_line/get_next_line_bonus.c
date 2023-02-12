@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*reader(char *buf, int fd, ssize_t size)
 {
@@ -77,17 +77,17 @@ char	*new_buf(char *buf)
 
 char	*get_next_line(int fd)
 {
-	static char	*buf;
+	static char	*buf[OPEN_MAX];
 	char		*line;
 
-	buf = reader(buf, fd, BUFFER_SIZE);
-	if (!buf)
+	buf[fd] = reader(buf[fd], fd, BUFFER_SIZE);
+	if (!buf[fd])
 		return (NULL);
-	line = get_line(buf);
+	line = get_line(buf[fd]);
 	if (!line)
 		return (NULL);
-	buf = new_buf(buf);
-	if (!buf)
+	buf[fd] = new_buf(buf[fd]);
+	if (!buf[fd])
 		return (NULL);
 	return (line);
 }
