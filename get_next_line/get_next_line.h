@@ -27,5 +27,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 # endif
-# define OPEN_MAX 65534
 #endif

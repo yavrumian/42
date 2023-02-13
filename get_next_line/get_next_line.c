@@ -91,3 +91,9 @@ char	*get_next_line(int fd)
 		return (NULL);
 	return (line);
 }
+
+int main(){
+	int fd = open("test", O_RDONLY);
+
+	printf("%s", get_next_line(fd));
+}
