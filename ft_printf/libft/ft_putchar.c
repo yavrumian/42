@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
+/*   By: vyavrumy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:13:38 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/12/07 16:13:39 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/08 22:24:38 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/12 00:27:43 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_putchar(char c)
 {
-	int	i;
-
-	i = -1;
-	while (s[++i])
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-	return (NULL);
+	write (1, &c, 1);
+	return (1);
 }

@@ -52,5 +52,10 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+size_t	ft_putchar(char c);
+size_t	ft_putstr(char *s);
+size_t	ft_putnbr_base(uint nb, char *base, size_t len);
+size_t	ft_putnbr(int n, size_t len);
+size_t	ft_putnbr_u(unsigned int n, size_t len);
 
 #endif

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vyavrumy <vyavrumy@student.42yerevan.am>   +#+  +:+       +#+        */
+/*   By: vyavrumy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 16:13:38 by vyavrumy          #+#    #+#             */
-/*   Updated: 2022/12/07 16:13:39 by vyavrumy         ###   ########.fr       */
+/*   Created: 2022/11/15 19:57:26 by vyavrumy          #+#    #+#             */
+/*   Updated: 2022/11/15 19:57:27 by vyavrumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_putstr(char *s)
 {
 	int	i;
 
-	i = -1;
-	while (s[++i])
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-	return (NULL);
+	if (!s)
+		return ft_putstr("(null)");
+	i = 0;
+	while (*(s + i) != '\0')
+	{
+		ft_putchar(s[i]);
+		// write(1, s + i, 1);
+		i++;
+	}
+	ft_putchar('\0');
+	// write(1, "", 1);
+	return (i);
 }
