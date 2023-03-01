@@ -5,7 +5,7 @@ int main(){
 
 	int u = 0;
 	char *str;
-	while (++u <= 4){
+	while (++u <= 18){
 		str = get_next_line(fd);
 	printf("res: %s^\n", str);
 	free(str);
